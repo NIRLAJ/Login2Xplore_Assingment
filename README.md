@@ -134,6 +134,8 @@ Student_Enrollment_JPDB/
 |
 |-- index.html
 |-- index.js
+|-- config.example.js
+|-- .gitignore
 |-- README.md
 `-- screenshots/
 ```
@@ -141,6 +143,8 @@ Student_Enrollment_JPDB/
 `index.html` contains the user interface and loads Bootstrap, jQuery, and the JsonPowerDB commons library.
 
 `index.js` contains validation, primary-key lookup, Save, Update, Reset, and JsonPowerDB communication logic.
+
+`config.js` (not committed) stores your JsonPowerDB connection token. A `config.example.js` template is provided.
 
 ## Setup and Installation
 
@@ -157,15 +161,19 @@ Alternatively, download the project as a ZIP and extract it.
 
 ### 2. Configure JsonPowerDB
 
-Open `index.js` and find:
+Copy the example config file and add your token:
+
+```sh
+cp config.example.js config.js
+```
+
+Open `config.js` and replace `YOUR_CONNECTION_TOKEN` with your valid JsonPowerDB connection token:
 
 ```javascript
 var connToken = "YOUR_CONNECTION_TOKEN";
 ```
 
-Replace `YOUR_CONNECTION_TOKEN` with a valid JsonPowerDB connection token **only in your local copy**.
-
-> **Security:** Do not commit a real connection token to a public GitHub repository.
+> **Security:** `config.js` is listed in `.gitignore` and will **not** be committed to GitHub. Never commit your real token.
 
 ### 3. Run the application
 
@@ -264,4 +272,4 @@ GitHub: `https://github.com/NIRLAJ`
 
 ### Important Security Note
 
-The connection token used to access JsonPowerDB should be treated as a credential. Keep your real token in your local development copy and avoid publishing it in screenshots, README files, or public GitHub source code.
+Your `config.js` file (containing your JsonPowerDB connection token) is excluded from Git via `.gitignore`. Only `config.example.js` is committed. Keep your real token in `config.js` locally and never publish it publicly.

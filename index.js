@@ -5,8 +5,6 @@ var jpdbIML = "/api/iml";
 var studentDBName = "SCHOOL-DB";
 var studentRelationName = "STUDENT-TABLE";
 
-var connToken = "YOUR_CONNECTION_TOKEN";
-
 
 $(document).ready(function () {
     resetForm();
